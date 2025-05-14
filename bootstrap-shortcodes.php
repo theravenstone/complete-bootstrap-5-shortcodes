@@ -1282,8 +1282,8 @@ class BootstrapShortcodes {
             'ul',
             'div'
         );
-        $wrap_before = ($this->testdom($content, $search_tags)) ? '' : ($this->is_flag('linked', $save_atts)) ? '<div>' : '<ul>';
-        $wrap_after = ($this->testdom($content, $search_tags)) ? '' : ($this->is_flag('linked', $save_atts)) ? '</div>' : '</ul>';
+        $wrap_before = ($this->testdom($content, $search_tags)) ? '' : (($this->is_flag('linked', $save_atts)) ? '<div>' : '<ul>');
+        $wrap_after = ($this->testdom($content, $search_tags)) ? '' : (($this->is_flag('linked', $save_atts)) ? '</div>' : '</ul>');
 
         $class = array();
         $class[] = 'list-group';
@@ -1953,7 +1953,7 @@ class BootstrapShortcodes {
      * bs_img_gen
      *
      * Based on:
-     * Dynamic Dummy Image Generator — as seen on DummyImage.com by Fabian Beiner
+     * Dynamic Dummy Image Generator ï¿½ as seen on DummyImage.com by Fabian Beiner
      *
      * (Original idea by Russel Heimlich. When I first published this script,
      * DummyImage.com was not Open Source, so I had to write a small script to
@@ -1978,7 +1978,7 @@ class BootstrapShortcodes {
         }
 
         /**
-         * Handle the “size” parameter.
+         * Handle the ï¿½sizeï¿½ parameter.
          */
         $size = '640x480';
         if (isset($atts['size'])) {
@@ -1997,7 +1997,7 @@ class BootstrapShortcodes {
         }
 
         /**
-         * Handle the “file” parameter.
+         * Handle the ï¿½fileï¿½ parameter.
          */
         $filetype = 'png';
         if (isset($atts['file']) && in_array(strtolower($atts['file']) , ['png', 'gif', 'jpg', 'jpeg'])) {
@@ -2005,9 +2005,9 @@ class BootstrapShortcodes {
         }
 
         /**
-         * Handle the “text” parameter.
+         * Handle the ï¿½textï¿½ parameter.
          */
-        $text = $imgWidth . '×' . $imgHeight;
+        $text = $imgWidth . 'ï¿½' . $imgHeight;
         if (isset($atts['text']) && strlen($atts['text'])) {
             $text = filter_var(trim($atts['text']) , FILTER_SANITIZE_STRING);
         }
@@ -2018,7 +2018,7 @@ class BootstrapShortcodes {
         $text = mb_encode_numericentity($text, [0x0, 0xffff, 0, 0xffff], 'UTF-8');
 
         /**
-         * Handle the “bg” parameter.
+         * Handle the ï¿½bgï¿½ parameter.
          */
         $bg = '000080';
         if (isset($atts['bg']) && (strlen($atts['bg']) === 6 || strlen($atts['bg']) === 3)) {
@@ -2030,7 +2030,7 @@ class BootstrapShortcodes {
         list($bgRed, $bgGreen, $bgBlue) = sscanf($bg, "%02x%02x%02x");
 
         /**
-         * Handle the “color” parameter.
+         * Handle the ï¿½colorï¿½ parameter.
          */
         $color = 'FFFFFF';
         if (isset($atts['color']) && (strlen($atts['color']) === 6 || strlen($atts['color']) === 3)) {
